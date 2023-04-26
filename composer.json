@@ -1,0 +1,22 @@
+{
+    "name": "mpm/routing",
+    "description": "Mpm Router",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "mpm/http":"^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mpm\\Routing\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "raaz maholia",
+            "email": "maholialekhraj46@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
