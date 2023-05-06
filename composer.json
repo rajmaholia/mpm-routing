@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "php": "^8.0",
-        "mpm/http":"^1.0"
+        "mpm/http":"^1.1"
     },
     "license": "MIT",
     "autoload": {
