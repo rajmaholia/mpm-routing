@@ -38,8 +38,8 @@ class Router
 
     public static function run(Request $request)
     {    
-        $requestMethod = $request->method;
-        $requestUri   = $request->uri;
+        $requestMethod = $request->method();
+        $requestUri   = $request->uri();
         $route = self::match($requestUri, $requestMethod);
         
         if (!$route) {
