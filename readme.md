@@ -12,7 +12,6 @@ Simple and Powerful PHP Routing for Your Web Applications
 - Examples
 - Contributing
 - License
-- Acknowledgements
 
 ## Introduction
 
@@ -92,29 +91,15 @@ Choose `mpm-routing` for a powerful yet easy-to-use routing solution in your PHP
         } 
         ``` 
         
-  ### 3. Custom Exception Handling
-        
-        Handle routing errors using custom exception handling. When a route is not found or other routing errors occur, a `RouteException` is thrown.
-        
-        ```
-        try {
-            // Attempt to match and execute a route
-            $request = new Request();
-            Router::run($request);
-        } catch (RouteException $e) {
-            // Handle the routing exception
-            echo 'Routing Error: ' . $e->getMessage();
-            // You can also log the exception for debugging purposes.
-        } 
-        ``` 
-  ### 4. Including Additional Routes
+
+  ### 3. Including Additional Routes
             Organize your routes by including additional route files. This helps keep your codebase clean and maintainable.
     ```
       // Include routes from an additional file
       Router::includes('path/to/extra-routes.php');
     ```
   
-  ### 5. Listing Registered Routes
+  ### 4. Listing Registered Routes
     Retrieve a list of all registered routes programmatically to understand your application's routing structure.
     ```markdown
     // Get a list of registered routes
