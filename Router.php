@@ -2,17 +2,36 @@
 namespace Mpm\Routing;
 use Mpm\Http\Request;
 
-
+/**
+ * Class Router
+ *
+ * The Router class handles routing and request handling in the application.
+ *
+ * @package Mpm\Routing
+ */
 class Router
-{
+{ 
+    /**
+     * An array to store defined routes.
+     *
+     * @var array
+     */
     private static $routes = [];
     
-    
+    /**
+     * Private constructor to prevent external instantiation.
+     */
     private function __construct(){
       
     }
     
-    
+    /**
+     * Match a request URI and method to a registered route.
+     *
+     * @param string $requestUri
+     * @param string $requestMethod
+     * @return array|null An array containing the matched handler and parameters, or null if no match is found.
+     */
     public static function match($requestUri, $requestMethod)
     {
         foreach (Route::getRoutes() as $route) {
@@ -35,7 +54,12 @@ class Router
 
         return null;
     }
-
+    
+    /**
+     * Run the router and execute the matched route's handler.
+     *
+     * @param Request $request
+     */
     public static function run(Request $request)
     {    
         $requestMethod = $request->method();
@@ -70,13 +94,22 @@ class Router
         }
     }
     
-    
+    /**
+     * Include additional route files.
+     *
+     * @param string $path
+     */
     public static function includes($path) {
       $vendor = dirname(dirname(__DIR__));
       $base = dirname($vendor);
 
     }
     
+   /**
+     * Get all registered routes.
+     *
+     * @return array
+     */  
     public static function routes(){
       return Route::getRoutes();
     }
